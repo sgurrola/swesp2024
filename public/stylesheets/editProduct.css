@@ -5,6 +5,8 @@ body, html {
   background: #f7f7f7;
 }
 
+
+
 .edit-product-container {
   display: flex;
   flex-direction: column;
@@ -14,16 +16,21 @@ body, html {
   background: #fff;
 }
 
+.product-image {
+  text-align: center;
+}
+input#product-image-url {
+  margin: 20px;
+}
+
+
 .product-image img {
   max-width: 100%;
   height: 400px;
   width: auto;
   display: block;
   margin: 0 auto 20px;
-}
-
-.product-info {
-  text-align: center;
+  border: black 5px solid;
 }
 
 h1 {
@@ -33,10 +40,6 @@ h1 {
 
 .price {
   font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.quantity-editor {
   margin-bottom: 20px;
 }
 
@@ -59,6 +62,11 @@ h1 {
   color: white;
 }
 
+.button-group{
+  display: flex;
+  justify-content: center;
+
+}
 .save-changes {
   background-color: #4CAF50;
 }
@@ -73,6 +81,47 @@ h1 {
   line-height: 1.6;
 }
 
+.quantity-editor {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.name-of-prod{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.price-of-prod{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.product-description{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.product-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: space-evenly;
+}
 /* styles.css */
 .centered-text {
   text-align: center;

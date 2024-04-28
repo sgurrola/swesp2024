@@ -11,29 +11,35 @@
   <div class="edit-product-container">
   <form id="edit-product-form" action="/edit-product/<%= productId %>" method="post">
     <div class="product-image">
-      <label for="product-image-url">Product Image URL:</label>
+      <label class="prod-image-url" for="product-image-url">Product Image URL:</label>
       <input type="text" id="product-image-url" name="image" value="<%= item.image %>">
       <img id="image-preview" src="<%= item.image %>" alt="Product Image">
     </div>
     <div class="product-info">
-      <label for="product-name">Name:</label>
-      <input type="text" id="product-name" name="name" value="<%= item.name %>">
+      <div class="name-of-prod">
+        <label for="product-name">Name:</label>
+        <input type="text" id="product-name" name="name" value="<%= item.name %>">
+      </div>
       
-      <label for="product-price">Price:</label>
-      <input type="text" id="product-price" name="price" value="<%= item.price %>">
-      
+      <div class="price-of-prod">
+        <label for="product-price">Price:</label>
+        <input type="text" id="product-price" name="price" value="<%= item.price %>">
+      </div>
+
       <div class="quantity-editor">
-        <label for="quantity">Qty:</label>
+        <label for="quantity">Quantity:</label>
         <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>">
       </div>
+      <div class="product-description">
+        <label for="product-description">Description:</label>
+        <textarea id="product-description" name="description"><%= item.description %></textarea>
+      </div>
     </div>
-    <div class="product-description">
-      <label for="product-description">Description:</label>
-      <textarea id="product-description" name="description"><%= item.description %></textarea>
-    </div>
+    
     <input type="hidden" name="productId" value= <%= productId %>>
     <input type="hidden" name="token" value= <%= token %>>
 
+    <div class="button-group">
     <div class="product-actions">
       <input type="submit" class="btn save-changes" value="Save Changes">
     </div>
@@ -43,6 +49,7 @@
     <input type="hidden" name="token" value= <%= token %>>
     <input type="submit" class="btn delete-product" value="Delete Product" onclick="confirmDeletion(event)">
   </form>
+    </div>
   </div>
   <% if (change_log && change_log.length > 0) { %>
     <% change_log.forEach(function(change) { %>
