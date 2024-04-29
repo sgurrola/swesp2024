@@ -30,7 +30,18 @@ router.get('/', function (req, res, next) {
                 if (is_admin) {
                   res.redirect(`/?session=${token}`);
                 } else {
-                  res.render('pages/cart', { title: username, items: items, token:req.query.session, user_id: user_id});
+
+                  queries.fetchVisibleProducts((err,product)=>{
+                    if (err) {
+                      return next(err);
+                    }else{
+    
+                      res.render('pages/cart', { product:product,title: username, items: items, token:req.query.session, user_id: user_id});
+                     // console.log(product[0].quantity);
+                    }});    
+
+
+
                 }
               } else {
                 res.redirect(`/?session=${token}`);
