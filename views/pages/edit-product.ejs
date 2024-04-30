@@ -20,11 +20,11 @@
       <input type="text" id="product-name" name="name" value="<%= item.name %>">
       
       <label for="product-price">Price:</label>
-      <input type="text" id="product-price" name="price" value="<%= item.price %>">
+      <input type="text" id="product-price" name="price" value="<%= item.price %>" pattern="[0-999]+(\.[00-99]+)?" title="Please enter a positive number" >
       
       <div class="quantity-editor">
         <label for="quantity">Qty:</label>
-        <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>">
+        <input type="number" id="quantity" name="quantity" value="<%= item.quantity %>" pattern="[0-999]+(\.[00-99]+)?" title="Please enter a positive number" >
       </div>
     </div>
     <div class="product-description">
