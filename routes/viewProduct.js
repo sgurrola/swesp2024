@@ -39,6 +39,7 @@ router.get('/:productId', (req, res) => {
             res.render('pages/view-product', { item: item, productId: productId, token: token, admin: false });
           }
         }
+        //also fetch all the products and we can check the ids and get the c
       });
     }
   });

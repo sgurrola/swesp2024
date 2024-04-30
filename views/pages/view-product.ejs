@@ -28,7 +28,7 @@
             <% } %>
             <form class="login-form" action="/view-product" method="post">
                 <label for="quantity">Qty:</label>
-                <input type="number" name="quantity" id="quantity" value=1 />
+                <input type="number" name="quantity" id="quantity" min="1" max=<%= item.quantity %> value=1 />
                 <br>
                 <input type="hidden" name="token" value=<%=token %>>
                 <input type="hidden" name="productId" value=<%=productId %>>
