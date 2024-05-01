@@ -12,14 +12,14 @@
 <% total=0 %>
 <% let cartItems = {} %>
 <% if (items && items.length > 0) { %>
-  <% items.forEach(function(item) {
+  <% items.forEach(item => {
       if (cartItems[item.product_id]) {
           cartItems[item.product_id].quantity += item.quantity;
       } else {
           cartItems[item.product_id] = item;
-      }
+      }});
       total += item.price * item.quantity;
-  }); %>
+   %>
 <% } %>
 
 <body>
@@ -41,7 +41,7 @@
                                 <label for="quantity">Qty:</label>
                                 <!--<input id="quantity" type="number" value=<%= item.quantity %> />-->
                                 <form class="update-quantity" action="/cart/update-quantity" method="post">
-                                    <input id="quantity" type="number" name="quantity" min="0" value=<%= item.quantity  %>  onchange="this.form.submit()" />
+                                    <input id="quantity" type="number" name="quantity" min="0" value=<%= item.quantity %>  onchange="this.form.submit()" />
                                     <input type="hidden" name="token" value=<%=token %>>
                                     <input type="hidden" name="uid" value=<%=user_id %>>
                                     <input type="hidden" name="pid" value=<%=item.product_id %>>
