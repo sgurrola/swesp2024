@@ -12,14 +12,14 @@
 <% total=0 %>
 <% let cartItems = {} %>
 <% if (items && items.length > 0) { %>
-  <% items.forEach(item => {
+  <% items.forEach(function(item) {
       if (cartItems[item.product_id]) {
           cartItems[item.product_id].quantity += item.quantity;
       } else {
           cartItems[item.product_id] = item;
-      }});
+      }
       total += item.price * item.quantity;
-   %>
+  }); %>
 <% } %>
 
 <body>
@@ -45,6 +45,7 @@
                                     <input type="hidden" name="token" value=<%=token %>>
                                     <input type="hidden" name="uid" value=<%=user_id %>>
                                     <input type="hidden" name="pid" value=<%=item.product_id %>>
+
                                 </form>
                                 <form class="delete-item" action="/cart/delete-item" method="post">
                                     <input type="hidden" name="token" value=<%=token %>>
